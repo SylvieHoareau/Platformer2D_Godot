@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpeunbin5w6j2"]
+
+[ext_resource type="Script" uid="uid://cbkwtdrifhpmf" path="res://scripts/World.gd" id="1_8n02c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tksgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7xio"]
+size = Vector2(389, 11)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opca8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
+size = Vector2(389, 25)
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_point_1", "spawn_point_2")]
+script = ExtResource("1_8n02c")
+spawn_point_1 = NodePath("SpawnPoint1")
+spawn_point_2 = NodePath("SpawnPoint2")
+
+[node name="Sol" type="StaticBody2D" parent="."]
+position = Vector2(506, 289)
+physics_material_override = SubResource("PhysicsMaterial_tksgi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol"]
+position = Vector2(164.5, 21.5)
+shape = SubResource("RectangleShape2D_e7xio")
+debug_color = Color(0.8159611, 0.40706536, 0.012633745, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sol"]
+position = Vector2(1, 22)
+
+[node name="Plateform" type="StaticBody2D" parent="."]
+position = Vector2(506, 334)
+physics_material_override = SubResource("PhysicsMaterial_opca8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plateform"]
+position = Vector2(164.5, -5.210449)
+shape = SubResource("RectangleShape2D_0icee")
+debug_color = Color(0.9943972, 0, 0.2300325, 0.41960785)
+
+[node name="SpawnPoint1" type="Marker2D" parent="."]
+modulate = Color(0, 0.77254903, 1, 1)
+position = Vector2(563, 289)
+
+[node name="SpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(764, 291)

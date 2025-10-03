@@ -20,6 +20,9 @@ var dash_timer: float = 0.0
 # Raccourci pour accéder au sprite
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+# Charger les animations du joueur
+# const PLAYER_ANIMATIONS = preload("res://scenes/Player.tscn")
+
 func _ready() -> void:
 	# Ce noeud fait partie du groupe Player quand la scène est prête
 	add_to_group("player")
@@ -57,17 +60,50 @@ func _physics_process(delta: float) -> void:
 	# Dash
 	_dash_logic(delta, dash_action, left_action, right_action)
 	
+	_handle_animations(direction)
+	
 	# Déplacer le joueur
 	move_and_slide()
 		
-	# Jouer les animations
+func _handle_animations(direction: float):
+	# Choisir les bonnes animations selon l'ID du Player
+	var jump_anim = "p%d_jump" %player_id
+	var run_anim = "p%d_run" %player_id
+	var idle_anim = "p%d_idle" %player_id
+	var dash_anim = "p%d_dash" %player_id
+	# var snooze_anim = "p%d_snooze" % player_id
+	
+	# Priorité haute
+	if (is_dashing):
+		sprite.play(dash_anim)
+		
+	# Priorité moyenne
 	if not is_on_floor():
-		sprite.play("jump")
+		# Si le AnimatedSprite2D a cette animation :
+		if sprite.sprite_frames.has_animation(jump_anim):
+			sprite.play(jump_anim)
+		else:
+			# Si l'animation de saut n'existe pas, on revient à l'état de mouvement/arrêt
+			
+			# Ne rien faire, le sprite continue sur sa dernière animation
+			#pass
+			
+			# Forcer l'animation 'run' ou 'idle' si le personnage n'a pas de saut
+			if direction != 0:
+				sprite.play(run_anim)
+				sprite.flip_h = direction < 0
+			else:
+				sprite.play(idle_anim)
+				
+		# Une fois l'état d'Air géré, on sort de la fonction
+		return 
+
+	# Priorité basse
 	if direction != 0:
-		sprite.play("run")
+		sprite.play(run_anim)
 		sprite.flip_h = direction < 0 # retourne le sprite si gauche
 	else:
-		sprite.play("idle")
+		sprite.play(idle_anim)
 
 func _dash_logic(delta: float, dash_action: String, left_action: String, right_action: String) -> void:
 	var input_dir: Vector2 = Vector2(

@@ -237,6 +237,6 @@ shape = SubResource("RectangleShape2D_mc20k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5py54")
-animation = &"p2_dash"
+animation = &"p1_dash"
 autoplay = "p1_idle"
 script = ExtResource("3_70d11")

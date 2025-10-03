@@ -446,7 +446,7 @@ sources/0 = SubResource("TileSetAtlasSource_8n02c")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
 size = Vector2(430, 25)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_point_1", "spawn_point_2")]
+[node name="World" type="Node2D" node_paths=PackedStringArray("spawn_point_1", "spawn_point_2")]
 script = ExtResource("1_8n02c")
 spawn_point_1 = NodePath("SpawnPoint1")
 spawn_point_2 = NodePath("SpawnPoint2")

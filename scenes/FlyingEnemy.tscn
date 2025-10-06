@@ -1,0 +1,211 @@
+[gd_scene load_steps=43 format=3 uid="uid://cvn63ppuwcoaq"]
+
+[ext_resource type="Script" uid="uid://ck22fmi8h5bec" path="res://scenes/Enemy.gd" id="1_iagvn"]
+[ext_resource type="Texture2D" uid="uid://igtevy74w2v5" path="res://enemy/PNG/Knight/Attack/attack0.png" id="2_kl80n"]
+[ext_resource type="Texture2D" uid="uid://ydk8iylw28bi" path="res://enemy/PNG/Knight/Attack/attack4.png" id="3_ngcp3"]
+[ext_resource type="Texture2D" uid="uid://dpxthtj1c12q6" path="res://enemy/PNG/Knight/Attack/attack2.png" id="4_rjaiv"]
+[ext_resource type="Texture2D" uid="uid://cilw65l2uhoq6" path="res://enemy/PNG/Knight/Attack/attack3.png" id="5_6aocv"]
+[ext_resource type="Texture2D" uid="uid://cvgjx14nvpf83" path="res://enemy/PNG/Knight/Attack/attack1.png" id="6_bof0a"]
+[ext_resource type="Texture2D" uid="uid://buu7hmx6xs05b" path="res://enemy/PNG/Knight/knight.png" id="7_p5cmy"]
+[ext_resource type="Texture2D" uid="uid://bytjlpywcovsk" path="res://enemy/PNG/Knight/Idle/idle1.png" id="8_ibrno"]
+[ext_resource type="Texture2D" uid="uid://bv7jk5gplpoxa" path="res://enemy/PNG/Knight/Idle/idle2.png" id="9_ppsjb"]
+[ext_resource type="Texture2D" uid="uid://dvqn8syn4oohx" path="res://enemy/PNG/Knight/Idle/idle3.png" id="10_4x6wv"]
+[ext_resource type="Texture2D" uid="uid://5do5tqqxw2gm" path="res://enemy/PNG/Knight/Idle/idle4.png" id="11_wjwp7"]
+[ext_resource type="Texture2D" uid="uid://bhikgak8tyvlf" path="res://enemy/PNG/Knight/Idle/idle5.png" id="12_3uw45"]
+[ext_resource type="Texture2D" uid="uid://dqs8gqdsw0npm" path="res://enemy/PNG/Knight/Idle/idle7.png" id="13_dhtwo"]
+[ext_resource type="Texture2D" uid="uid://vofgnnlnb7qj" path="res://enemy/PNG/Knight/Idle/idle6.png" id="14_842mu"]
+[ext_resource type="Texture2D" uid="uid://csyheisxe2ufe" path="res://enemy/PNG/Knight/Idle/idle8.png" id="15_tyhxh"]
+[ext_resource type="Texture2D" uid="uid://badoafi6wuip1" path="res://enemy/PNG/Knight/Idle/idle9.png" id="16_8mfwi"]
+[ext_resource type="Texture2D" uid="uid://b1f47aingyk8x" path="res://enemy/PNG/Knight/Idle/idle12.png" id="17_pvqxc"]
+[ext_resource type="Texture2D" uid="uid://bgu66j35benyy" path="res://enemy/PNG/Knight/Idle/idle11.png" id="18_fqs1u"]
+[ext_resource type="Texture2D" uid="uid://bv0h8gmat4vl5" path="res://enemy/PNG/Knight/Idle/idle10.png" id="19_c84q2"]
+[ext_resource type="Texture2D" uid="uid://i8k1tflvirt4" path="res://enemy/PNG/Knight/Jump/jump1.png" id="20_45vnh"]
+[ext_resource type="Texture2D" uid="uid://3xoav6d5th32" path="res://enemy/PNG/Knight/Jump/jump2.png" id="21_1msl8"]
+[ext_resource type="Texture2D" uid="uid://dh28r1yx13v1o" path="res://enemy/PNG/Knight/Jump/jump3.png" id="22_dihs4"]
+[ext_resource type="Texture2D" uid="uid://dhklsu0swwagu" path="res://enemy/PNG/Knight/Jump/jump4.png" id="23_s7kjs"]
+[ext_resource type="Texture2D" uid="uid://dw202qmid6ubr" path="res://enemy/PNG/Knight/Jump/jump6.png" id="24_4kveq"]
+[ext_resource type="Texture2D" uid="uid://d3ch62ik8i3oe" path="res://enemy/PNG/Knight/Jump/jump5.png" id="25_mqa0m"]
+[ext_resource type="Texture2D" uid="uid://ptpm457421kb" path="res://enemy/PNG/Knight/Jump/jump7.png" id="26_am1f0"]
+[ext_resource type="Texture2D" uid="uid://dalb8pjpta6xd" path="res://enemy/PNG/Knight/Run/run1.png" id="27_qmg1d"]
+[ext_resource type="Texture2D" uid="uid://bg7exln6vsohg" path="res://enemy/PNG/Knight/Run/run2.png" id="28_sxep3"]
+[ext_resource type="Texture2D" uid="uid://cqrvp2eh34ray" path="res://enemy/PNG/Knight/Run/run4.png" id="29_f1vu5"]
+[ext_resource type="Texture2D" uid="uid://dklanwd5ql3k" path="res://enemy/PNG/Knight/Run/run3.png" id="30_nbp5b"]
+[ext_resource type="Texture2D" uid="uid://db8tpssvbk2h4" path="res://enemy/PNG/Knight/Run/run5.png" id="31_8bmpy"]
+[ext_resource type="Texture2D" uid="uid://b56qraulkjdti" path="res://enemy/PNG/Knight/Run/run7.png" id="32_cx1yb"]
+[ext_resource type="Texture2D" uid="uid://bpubh3ae3w6xh" path="res://enemy/PNG/Knight/Run/run6.png" id="33_mrvg1"]
+[ext_resource type="Texture2D" uid="uid://dyds6lypvrcvg" path="res://enemy/PNG/Knight/Run/run8.png" id="34_c0xrv"]
+[ext_resource type="Texture2D" uid="uid://cyxmvcbuab0v7" path="res://enemy/PNG/Knight/Walk_Attack/walk_attack1.png" id="35_1d74h"]
+[ext_resource type="Texture2D" uid="uid://fsxj1q6j5at3" path="res://enemy/PNG/Knight/Walk_Attack/walk_attack3.png" id="36_c30y2"]
+[ext_resource type="Texture2D" uid="uid://dqikn0oe8050c" path="res://enemy/PNG/Knight/Walk_Attack/walk_attack4.png" id="37_dqggu"]
+[ext_resource type="Texture2D" uid="uid://dxu5na28gn65r" path="res://enemy/PNG/Knight/Walk_Attack/walk_attack5.png" id="38_dbnfa"]
+[ext_resource type="Texture2D" uid="uid://e774oar4qoxr" path="res://enemy/PNG/Knight/Walk_Attack/walk_attack6.png" id="39_xbwrj"]
+[ext_resource type="Texture2D" uid="uid://nqglmshwnj3x" path="res://enemy/PNG/Knight/Walk_Attack/walk_attack2.png" id="40_8tawn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qkhh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1yns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kl80n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ngcp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rjaiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6aocv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bof0a")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p5cmy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ibrno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ppsjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4x6wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wjwp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3uw45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dhtwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_842mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tyhxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8mfwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pvqxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fqs1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_c84q2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_45vnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1msl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dihs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_s7kjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4kveq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mqa0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_am1f0")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_qmg1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sxep3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_f1vu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_nbp5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8bmpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cx1yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_mrvg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_c0xrv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_1d74h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_c30y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dqggu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dbnfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xbwrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8tawn")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="FlyingEnemy" type="CharacterBody2D"]
+script = ExtResource("1_iagvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2qkhh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u1yns")
+animation = &"attack"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cpeunbin5w6j2"]
+[gd_scene load_steps=17 format=4 uid="uid://cpeunbin5w6j2"]
 
 [ext_resource type="Script" uid="uid://cbkwtdrifhpmf" path="res://scripts/World.gd" id="1_8n02c"]
 [ext_resource type="Texture2D" uid="uid://dgvdwwc4j7f6y" path="res://assets/tileset/tileset.png" id="2_pjgkr"]
@@ -7,6 +7,28 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7xio"]
 size = Vector2(389, 11)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opca8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
+size = Vector2(430, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjgkr"]
+size = Vector2(97, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n02c"]
+size = Vector2(129, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6uwc"]
+size = Vector2(94, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u01fw"]
+size = Vector2(257, 28)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pjgkr"]
+vertices = PackedVector2Array(1111.9688, 439, 388.14063, 439, 392.8672, 84, 1111.0313, 84)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(378, 449, 1122, 449, 1121, 74, 383, 74)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n02c"]
 texture = ExtResource("2_pjgkr")
@@ -441,10 +463,16 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_8n02c")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opca8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ecom"]
+size = Vector2(719, 355)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
-size = Vector2(430, 25)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8n02c"]
+vertices = PackedVector2Array(1098.0703, -159.04688, 1099.9063, 71.921875, 399.15625, 67.0625, 402.84375, -162.9375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(393, -173, 389, 77, 1110, 82, 1108, -169)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d5o4"]
+size = Vector2(700, 229)
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("spawn_point_1", "spawn_point_2")]
 script = ExtResource("1_8n02c")
@@ -464,10 +492,6 @@ debug_color = Color(0.8159611, 0.40706536, 0.012633745, 0.41960785)
 [node name="Sprite2D" type="Sprite2D" parent="Sol"]
 position = Vector2(1, 22)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAvABUAAAAFAAAAAAAxABUAAAAFAAAAAAA=")
-tile_set = SubResource("TileSet_pof1r")
-
 [node name="Plateform" type="StaticBody2D" parent="."]
 position = Vector2(407, 351)
 physics_material_override = SubResource("PhysicsMaterial_opca8")
@@ -477,9 +501,49 @@ position = Vector2(185, -5.210449)
 shape = SubResource("RectangleShape2D_0icee")
 debug_color = Color(0.9943972, 0, 0.2300325, 0.41960785)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Plateform"]
+position = Vector2(449, -55)
+shape = SubResource("RectangleShape2D_pjgkr")
+debug_color = Color(0.9926774, 0, 0.25512865, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Plateform"]
+position = Vector2(560.5, -118)
+shape = SubResource("RectangleShape2D_8n02c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Plateform"]
+position = Vector2(657, -183)
+shape = SubResource("RectangleShape2D_u6uwc")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Plateform"]
+position = Vector2(-159.5, 42)
+shape = SubResource("RectangleShape2D_u01fw")
+
 [node name="SpawnPoint1" type="Marker2D" parent="."]
 modulate = Color(0, 0.77254903, 1, 1)
 position = Vector2(464, 306)
 
 [node name="SpawnPoint2" type="Marker2D" parent="."]
 position = Vector2(665, 308)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_pjgkr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
+tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAvABUAAAAFAAAAAAAxABUAAAAFAAAAAAAzABIAAAAFAAAAAAA1ABIAAAAFAAAAAAA3ABIAAAAFAAAAAAA5AA4AAAAFAAAAAAA7AA4AAAAFAAAAAAA9AA4AAAAFAAAAAAA/AA4AAAAFAAAAAABAAAoAAAAFAAAAAABCAAoAAAAFAAAAAABDAAoAAAAFAAAAAABEAAoAAAAFAAAAAAAWABgAAAAFAAAAAAAUABgAAAAFAAAAAAASABgAAAAFAAAAAAAQABgAAAAFAAAAAAAOABgAAAAFAAAAAAAMABgAAAAFAAAAAAAKABgAAAAFAAAAAAAIABgAAAAFAAAAAAA=")
+tile_set = SubResource("TileSet_pof1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D"]
+position = Vector2(754.5, 258.5)
+shape = SubResource("RectangleShape2D_7ecom")
+debug_color = Color(0.20171374, 0.6412115, 0, 0.41960785)
+
+[node name="NavigationRegion2DAir" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_8n02c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2DAir"]
+position = Vector2(747, -44.5)
+shape = SubResource("RectangleShape2D_5d5o4")
+debug_color = Color(0.89078736, 0.0002502799, 0.79371786, 0.41960785)
+
+[node name="Goal" type="Node2D" parent="."]
+position = Vector2(1066, -37)

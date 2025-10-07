@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://cvn63ppuwcoaq"]
 
-[ext_resource type="Script" uid="uid://ck22fmi8h5bec" path="res://scenes/Enemy.gd" id="1_iagvn"]
+[ext_resource type="Script" uid="uid://ck22fmi8h5bec" path="res://scripts/flying_enemy.gd" id="1_iagvn"]
 [ext_resource type="Texture2D" uid="uid://igtevy74w2v5" path="res://enemy/PNG/Knight/Attack/attack0.png" id="2_kl80n"]
 [ext_resource type="Texture2D" uid="uid://ydk8iylw28bi" path="res://enemy/PNG/Knight/Attack/attack4.png" id="3_ngcp3"]
 [ext_resource type="Texture2D" uid="uid://dpxthtj1c12q6" path="res://enemy/PNG/Knight/Attack/attack2.png" id="4_rjaiv"]

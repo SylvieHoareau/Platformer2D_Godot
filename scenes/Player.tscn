@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://uwtvyl0i4jln"]
 
 [ext_resource type="Texture2D" uid="uid://w5y255e68cgy" path="res://player/sprites/marlo.png" id="1_kyxg0"]
-[ext_resource type="Script" uid="uid://n22yjms0e3dp" path="res://scripts/PlayerController.gd" id="1_v6fml"]
+[ext_resource type="Script" uid="uid://n22yjms0e3dp" path="res://scripts/player_controller.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://b5fnw3prxwcur" path="res://player4/godot_og/spr_idle.png" id="3_3li8b"]
 [ext_resource type="Script" uid="uid://bpr5mwl61le2v" path="res://scripts/animated_sprite_2d.gd" id="3_70d11"]
 [ext_resource type="Texture2D" uid="uid://cuggx43n8iyy0" path="res://player4/godot_og/spr_run.png" id="4_qu4a1"]

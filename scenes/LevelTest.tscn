@@ -1,34 +1,105 @@
-[gd_scene load_steps=17 format=4 uid="uid://cpeunbin5w6j2"]
+[gd_scene load_steps=112 format=4 uid="uid://cpeunbin5w6j2"]
 
-[ext_resource type="Script" uid="uid://cbkwtdrifhpmf" path="res://scripts/World.gd" id="1_8n02c"]
+[ext_resource type="Script" uid="uid://cbkwtdrifhpmf" path="res://scripts/world.gd" id="1_8n02c"]
 [ext_resource type="Texture2D" uid="uid://dgvdwwc4j7f6y" path="res://assets/tileset/tileset.png" id="2_pjgkr"]
+[ext_resource type="Texture2D" uid="uid://bytjlpywcovsk" path="res://enemy/PNG/Knight/Idle/idle1.png" id="3_fjnt6"]
+[ext_resource type="Script" uid="uid://ck22fmi8h5bec" path="res://scripts/flying_enemy.gd" id="3_k6cyc"]
+[ext_resource type="Texture2D" uid="uid://bv7jk5gplpoxa" path="res://enemy/PNG/Knight/Idle/idle2.png" id="4_rhepx"]
+[ext_resource type="Texture2D" uid="uid://f3tykmmyxofo" path="res://enemy/PNG/Mage/Attack/attack1.png" id="4_sau3g"]
+[ext_resource type="Texture2D" uid="uid://dvqn8syn4oohx" path="res://enemy/PNG/Knight/Idle/idle3.png" id="5_0uhxk"]
+[ext_resource type="Texture2D" uid="uid://v6pr1s0slv8e" path="res://enemy/PNG/Mage/Attack/attack2.png" id="5_5yimb"]
+[ext_resource type="Texture2D" uid="uid://5do5tqqxw2gm" path="res://enemy/PNG/Knight/Idle/idle4.png" id="6_it64y"]
+[ext_resource type="Texture2D" uid="uid://7cx5s76uvwqy" path="res://enemy/PNG/Mage/Attack/attack3.png" id="6_nlyqk"]
+[ext_resource type="Texture2D" uid="uid://bhikgak8tyvlf" path="res://enemy/PNG/Knight/Idle/idle5.png" id="7_4pktj"]
+[ext_resource type="Texture2D" uid="uid://jd5w6ny2oo3h" path="res://enemy/PNG/Mage/Attack/attack4.png" id="7_g8kvv"]
+[ext_resource type="Texture2D" uid="uid://5heqkaa3q8s3" path="res://enemy/PNG/Mage/Attack/attack7.png" id="8_gwpcb"]
+[ext_resource type="Texture2D" uid="uid://vofgnnlnb7qj" path="res://enemy/PNG/Knight/Idle/idle6.png" id="8_rnra6"]
+[ext_resource type="Texture2D" uid="uid://b8q0op354d857" path="res://enemy/PNG/Mage/Attack/attack5.png" id="9_4u7t1"]
+[ext_resource type="Texture2D" uid="uid://dqs8gqdsw0npm" path="res://enemy/PNG/Knight/Idle/idle7.png" id="9_r813s"]
+[ext_resource type="Texture2D" uid="uid://be1clwi6o2dfb" path="res://enemy/PNG/Mage/Attack/attack6.png" id="10_w610s"]
+[ext_resource type="Texture2D" uid="uid://csyheisxe2ufe" path="res://enemy/PNG/Knight/Idle/idle8.png" id="10_wx6jq"]
+[ext_resource type="Texture2D" uid="uid://badoafi6wuip1" path="res://enemy/PNG/Knight/Idle/idle9.png" id="11_1ub7w"]
+[ext_resource type="Texture2D" uid="uid://ch5dt3vn4vieh" path="res://enemy/PNG/Mage/Idle/idle1.png" id="11_7jhsx"]
+[ext_resource type="Texture2D" uid="uid://bfm7y7p4v5jtd" path="res://enemy/PNG/Mage/Death/death1.png" id="11_itxgy"]
+[ext_resource type="Texture2D" uid="uid://b2q430tcjnr0n" path="res://enemy/PNG/Mage/Idle/idle2.png" id="12_eb7wv"]
+[ext_resource type="Texture2D" uid="uid://xhfln1cir8sr" path="res://enemy/PNG/Mage/Death/death2.png" id="12_vdr52"]
+[ext_resource type="Texture2D" uid="uid://b1f47aingyk8x" path="res://enemy/PNG/Knight/Idle/idle12.png" id="12_yetdy"]
+[ext_resource type="Texture2D" uid="uid://cjqitluonu5s" path="res://enemy/PNG/Mage/Idle/idle3.png" id="13_2bqh4"]
+[ext_resource type="Texture2D" uid="uid://bgu66j35benyy" path="res://enemy/PNG/Knight/Idle/idle11.png" id="13_3hjqj"]
+[ext_resource type="Texture2D" uid="uid://ckwtldmfpc6h0" path="res://enemy/PNG/Mage/Death/death3.png" id="13_py8wl"]
+[ext_resource type="Texture2D" uid="uid://c001dpbah6xa5" path="res://enemy/PNG/Mage/Death/death5.png" id="14_3uf1k"]
+[ext_resource type="Texture2D" uid="uid://bv0h8gmat4vl5" path="res://enemy/PNG/Knight/Idle/idle10.png" id="14_f1deq"]
+[ext_resource type="Texture2D" uid="uid://yartjch4xif2" path="res://enemy/PNG/Mage/Idle/idle4.png" id="14_jdssa"]
+[ext_resource type="Texture2D" uid="uid://dn5pfxyrcb4k0" path="res://enemy/PNG/Mage/Idle/idle6.png" id="15_jpq8a"]
+[ext_resource type="Texture2D" uid="uid://8ul0ba4yimku" path="res://enemy/PNG/Mage/Death/death4.png" id="15_rlrbs"]
+[ext_resource type="Texture2D" uid="uid://i8k1tflvirt4" path="res://enemy/PNG/Knight/Jump/jump1.png" id="15_wx6jq"]
+[ext_resource type="Texture2D" uid="uid://3xoav6d5th32" path="res://enemy/PNG/Knight/Jump/jump2.png" id="16_1ub7w"]
+[ext_resource type="Texture2D" uid="uid://dca2yf1vfqjo4" path="res://enemy/PNG/Mage/Idle/idle5.png" id="16_07t1b"]
+[ext_resource type="Texture2D" uid="uid://c8s0d7rk370wn" path="res://enemy/PNG/Mage/Death/death6.png" id="16_wtmbw"]
+[ext_resource type="Texture2D" uid="uid://dymyt6rm3thl" path="res://enemy/PNG/Mage/Idle/idle7.png" id="17_1v82r"]
+[ext_resource type="Texture2D" uid="uid://cfu1wa28nftao" path="res://enemy/PNG/Mage/Death/death7.png" id="17_3mubk"]
+[ext_resource type="Texture2D" uid="uid://dhklsu0swwagu" path="res://enemy/PNG/Knight/Jump/jump4.png" id="17_yetdy"]
+[ext_resource type="Texture2D" uid="uid://d3ch62ik8i3oe" path="res://enemy/PNG/Knight/Jump/jump5.png" id="18_3hjqj"]
+[ext_resource type="Texture2D" uid="uid://1748cluatj26" path="res://enemy/PNG/Mage/Idle/idle9.png" id="18_8y0cq"]
+[ext_resource type="Texture2D" uid="uid://clnigvfni2cii" path="res://enemy/PNG/Mage/Death/death8.png" id="18_u2ykh"]
+[ext_resource type="Texture2D" uid="uid://dw202qmid6ubr" path="res://enemy/PNG/Knight/Jump/jump6.png" id="19_f1deq"]
+[ext_resource type="Texture2D" uid="uid://43wsugldov42" path="res://enemy/PNG/Mage/Idle/idle10.png" id="19_nmfn7"]
+[ext_resource type="Texture2D" uid="uid://1dcgbaduwwv0" path="res://enemy/PNG/Mage/Death/death9.png" id="19_xrlby"]
+[ext_resource type="Texture2D" uid="uid://dyvumemkd252o" path="res://enemy/PNG/Mage/Idle/idle12.png" id="20_chkh5"]
+[ext_resource type="Texture2D" uid="uid://dh28r1yx13v1o" path="res://enemy/PNG/Knight/Jump/jump3.png" id="20_ha6qo"]
+[ext_resource type="Texture2D" uid="uid://cor4oqvci7ib1" path="res://enemy/PNG/Mage/Death/death10.png" id="20_o6kej"]
+[ext_resource type="Texture2D" uid="uid://ptpm457421kb" path="res://enemy/PNG/Knight/Jump/jump7.png" id="21_k6cyc"]
+[ext_resource type="Texture2D" uid="uid://dlapi168bce5h" path="res://enemy/PNG/Mage/mage.png" id="21_xj76q"]
+[ext_resource type="Texture2D" uid="uid://bsoufdbbrtoo7" path="res://enemy/PNG/Mage/Idle/idle11.png" id="21_ykdij"]
+[ext_resource type="Texture2D" uid="uid://dewidga4xx0se" path="res://enemy/PNG/Mage/Idle/idle8.png" id="22_oces5"]
+[ext_resource type="Texture2D" uid="uid://73d5tcidccrd" path="res://enemy/PNG/Mage/Idle/idle13.png" id="23_ka3q1"]
+[ext_resource type="Texture2D" uid="uid://cyoqax0ou8eh" path="res://enemy/PNG/Mage/Idle/idle14.png" id="24_ygw6r"]
+[ext_resource type="Texture2D" uid="uid://d007xkabpy8bc" path="res://enemy/PNG/Mage/Jump/jump1.png" id="25_c0wri"]
+[ext_resource type="Texture2D" uid="uid://b4wvufrxdr52a" path="res://enemy/PNG/Mage/Jump/jump2.png" id="26_7ec57"]
+[ext_resource type="Texture2D" uid="uid://dj8fc34qv4inm" path="res://enemy/PNG/Mage/Jump/jump3.png" id="27_wsgh7"]
+[ext_resource type="Texture2D" uid="uid://dx7d8sk8c7fcf" path="res://enemy/PNG/Mage/Jump/jump5.png" id="28_ysahj"]
+[ext_resource type="Texture2D" uid="uid://cnbjutgj4weg3" path="res://enemy/PNG/Mage/Jump/jump6.png" id="29_ya0os"]
+[ext_resource type="Texture2D" uid="uid://v1vps6rxgaxv" path="res://enemy/PNG/Mage/Jump/jump4.png" id="30_qgch4"]
+[ext_resource type="Texture2D" uid="uid://caoq5lm42c2d4" path="res://enemy/PNG/Mage/Jump/jump7.png" id="31_fp87e"]
+[ext_resource type="Script" uid="uid://cx0op1jxuvbb0" path="res://grounded_enemy.gd" id="32_5yimb"]
+[ext_resource type="Texture2D" uid="uid://buu7hmx6xs05b" path="res://enemy/PNG/Knight/knight.png" id="32_rohba"]
+[ext_resource type="Texture2D" uid="uid://cnwe4okc1ubrm" path="res://enemy/PNG/Mage/Run/run1.png" id="43_7phfg"]
+[ext_resource type="Texture2D" uid="uid://bmik7px1fwapv" path="res://enemy/PNG/Mage/Run/run2.png" id="44_v0knh"]
+[ext_resource type="Texture2D" uid="uid://dmal1k53yicxb" path="res://enemy/PNG/Mage/Run/run4.png" id="45_yimow"]
+[ext_resource type="Texture2D" uid="uid://dfhbfbwy2j4bv" path="res://enemy/PNG/Mage/Run/run3.png" id="46_vlrbo"]
+[ext_resource type="Texture2D" uid="uid://ii83dh8y4xxb" path="res://enemy/PNG/Mage/Run/run6.png" id="47_a3kct"]
+[ext_resource type="Texture2D" uid="uid://x4bj0jux3gee" path="res://enemy/PNG/Mage/Run/run5.png" id="48_if2j2"]
+[ext_resource type="Texture2D" uid="uid://d28vx8kv85fnu" path="res://enemy/PNG/Mage/Run/run7.png" id="49_ced76"]
+[ext_resource type="Texture2D" uid="uid://8ct8cmain2c3" path="res://enemy/PNG/Mage/Run/run8.png" id="50_fu3fd"]
+[ext_resource type="Texture2D" uid="uid://cvw4rwl65swon" path="res://enemy/PNG/Knight/Death/death1.png" id="52_ktydc"]
+[ext_resource type="Texture2D" uid="uid://ctgro1u6bd3rc" path="res://enemy/PNG/Knight/Death/death2.png" id="53_wqdoq"]
+[ext_resource type="Texture2D" uid="uid://dtkl2no6vl5bt" path="res://enemy/PNG/Knight/Death/death3.png" id="54_giu8k"]
+[ext_resource type="Texture2D" uid="uid://bms4uaxo3qo6o" path="res://enemy/PNG/Knight/Death/death4.png" id="55_jpqaj"]
+[ext_resource type="Texture2D" uid="uid://u8qlvfr56vqg" path="res://enemy/PNG/Knight/Death/death5.png" id="56_gcpua"]
+[ext_resource type="Texture2D" uid="uid://c8ywvimc70x2h" path="res://enemy/PNG/Knight/Death/death6.png" id="57_pm81x"]
+[ext_resource type="Texture2D" uid="uid://jijjc0f8bepg" path="res://enemy/PNG/Knight/Death/death8.png" id="58_ckawl"]
+[ext_resource type="Texture2D" uid="uid://bjtlr665grlf" path="res://enemy/PNG/Knight/Death/death7.png" id="59_7qtml"]
+[ext_resource type="Texture2D" uid="uid://cbs4rdma0h6dg" path="res://enemy/PNG/Knight/Death/death9.png" id="60_p4uju"]
+[ext_resource type="Texture2D" uid="uid://di3fvuebaf6hj" path="res://enemy/PNG/Knight/Death/death10.png" id="61_475mv"]
+[ext_resource type="Texture2D" uid="uid://dalb8pjpta6xd" path="res://enemy/PNG/Knight/Run/run1.png" id="82_ucai7"]
+[ext_resource type="Texture2D" uid="uid://bg7exln6vsohg" path="res://enemy/PNG/Knight/Run/run2.png" id="83_0he6i"]
+[ext_resource type="Texture2D" uid="uid://dklanwd5ql3k" path="res://enemy/PNG/Knight/Run/run3.png" id="84_f0hq8"]
+[ext_resource type="Texture2D" uid="uid://cqrvp2eh34ray" path="res://enemy/PNG/Knight/Run/run4.png" id="85_ydjgt"]
+[ext_resource type="Texture2D" uid="uid://db8tpssvbk2h4" path="res://enemy/PNG/Knight/Run/run5.png" id="86_nfdb4"]
+[ext_resource type="Texture2D" uid="uid://bpubh3ae3w6xh" path="res://enemy/PNG/Knight/Run/run6.png" id="87_ls4q1"]
+[ext_resource type="Texture2D" uid="uid://b56qraulkjdti" path="res://enemy/PNG/Knight/Run/run7.png" id="88_q0uc1"]
+[ext_resource type="Texture2D" uid="uid://dyds6lypvrcvg" path="res://enemy/PNG/Knight/Run/run8.png" id="89_ng0e7"]
+[ext_resource type="Texture2D" uid="uid://c7ms1j6xr8aqw" path="res://enemy/PNG/Knight/Walk/walk1.png" id="90_u2cr7"]
+[ext_resource type="Texture2D" uid="uid://b1nvd41nd4n4y" path="res://enemy/PNG/Knight/Walk/walk2.png" id="91_vcjed"]
+[ext_resource type="Texture2D" uid="uid://dispuhlt6qgnr" path="res://enemy/PNG/Knight/Walk/walk3.png" id="92_mroj6"]
+[ext_resource type="Texture2D" uid="uid://08dsbpkm5qop" path="res://enemy/PNG/Knight/Walk/walk4.png" id="93_y8h5b"]
+[ext_resource type="Texture2D" uid="uid://r7l1fdfbnu77" path="res://enemy/PNG/Knight/Walk/walk6.png" id="94_a6l51"]
+[ext_resource type="Texture2D" uid="uid://0vanw5peqpho" path="res://enemy/PNG/Knight/Walk/walk5.png" id="95_unvpq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tksgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7xio"]
 size = Vector2(389, 11)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opca8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
-size = Vector2(430, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjgkr"]
-size = Vector2(97, 31)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n02c"]
-size = Vector2(129, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6uwc"]
-size = Vector2(94, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u01fw"]
-size = Vector2(257, 28)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_pjgkr"]
-vertices = PackedVector2Array(1111.9688, 439, 388.14063, 439, 392.8672, 84, 1111.0313, 84)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(378, 449, 1122, 449, 1121, 74, 383, 74)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n02c"]
 texture = ExtResource("2_pjgkr")
@@ -49,22 +120,6 @@ texture_region_size = Vector2i(32, 32)
 13:0/0 = 0
 14:0/0 = 0
 15:0/0 = 0
-16:0/0 = 0
-17:0/0 = 0
-18:0/0 = 0
-19:0/0 = 0
-20:0/0 = 0
-21:0/0 = 0
-22:0/0 = 0
-23:0/0 = 0
-24:0/0 = 0
-25:0/0 = 0
-26:0/0 = 0
-27:0/0 = 0
-28:0/0 = 0
-29:0/0 = 0
-30:0/0 = 0
-31:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -81,22 +136,6 @@ texture_region_size = Vector2i(32, 32)
 13:1/0 = 0
 14:1/0 = 0
 15:1/0 = 0
-16:1/0 = 0
-17:1/0 = 0
-18:1/0 = 0
-19:1/0 = 0
-20:1/0 = 0
-21:1/0 = 0
-22:1/0 = 0
-23:1/0 = 0
-24:1/0 = 0
-25:1/0 = 0
-26:1/0 = 0
-27:1/0 = 0
-28:1/0 = 0
-29:1/0 = 0
-30:1/0 = 0
-31:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -113,22 +152,6 @@ texture_region_size = Vector2i(32, 32)
 13:2/0 = 0
 14:2/0 = 0
 15:2/0 = 0
-16:2/0 = 0
-17:2/0 = 0
-18:2/0 = 0
-19:2/0 = 0
-20:2/0 = 0
-21:2/0 = 0
-22:2/0 = 0
-23:2/0 = 0
-24:2/0 = 0
-25:2/0 = 0
-26:2/0 = 0
-27:2/0 = 0
-28:2/0 = 0
-29:2/0 = 0
-30:2/0 = 0
-31:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -145,22 +168,6 @@ texture_region_size = Vector2i(32, 32)
 13:3/0 = 0
 14:3/0 = 0
 15:3/0 = 0
-16:3/0 = 0
-17:3/0 = 0
-18:3/0 = 0
-19:3/0 = 0
-20:3/0 = 0
-21:3/0 = 0
-22:3/0 = 0
-23:3/0 = 0
-24:3/0 = 0
-25:3/0 = 0
-26:3/0 = 0
-27:3/0 = 0
-28:3/0 = 0
-29:3/0 = 0
-30:3/0 = 0
-31:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -177,22 +184,6 @@ texture_region_size = Vector2i(32, 32)
 13:4/0 = 0
 14:4/0 = 0
 15:4/0 = 0
-16:4/0 = 0
-17:4/0 = 0
-18:4/0 = 0
-19:4/0 = 0
-20:4/0 = 0
-21:4/0 = 0
-22:4/0 = 0
-23:4/0 = 0
-24:4/0 = 0
-25:4/0 = 0
-26:4/0 = 0
-27:4/0 = 0
-28:4/0 = 0
-29:4/0 = 0
-30:4/0 = 0
-31:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -209,22 +200,6 @@ texture_region_size = Vector2i(32, 32)
 13:5/0 = 0
 14:5/0 = 0
 15:5/0 = 0
-16:5/0 = 0
-17:5/0 = 0
-18:5/0 = 0
-19:5/0 = 0
-20:5/0 = 0
-21:5/0 = 0
-22:5/0 = 0
-23:5/0 = 0
-24:5/0 = 0
-25:5/0 = 0
-26:5/0 = 0
-27:5/0 = 0
-28:5/0 = 0
-29:5/0 = 0
-30:5/0 = 0
-31:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -241,22 +216,6 @@ texture_region_size = Vector2i(32, 32)
 13:6/0 = 0
 14:6/0 = 0
 15:6/0 = 0
-16:6/0 = 0
-17:6/0 = 0
-18:6/0 = 0
-19:6/0 = 0
-20:6/0 = 0
-21:6/0 = 0
-22:6/0 = 0
-23:6/0 = 0
-24:6/0 = 0
-25:6/0 = 0
-26:6/0 = 0
-27:6/0 = 0
-28:6/0 = 0
-29:6/0 = 0
-30:6/0 = 0
-31:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -273,189 +232,6 @@ texture_region_size = Vector2i(32, 32)
 13:7/0 = 0
 14:7/0 = 0
 15:7/0 = 0
-16:7/0 = 0
-17:7/0 = 0
-18:7/0 = 0
-19:7/0 = 0
-20:7/0 = 0
-21:7/0 = 0
-22:7/0 = 0
-23:7/0 = 0
-24:7/0 = 0
-25:7/0 = 0
-26:7/0 = 0
-27:7/0 = 0
-28:7/0 = 0
-29:7/0 = 0
-30:7/0 = 0
-31:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-16:8/0 = 0
-17:8/0 = 0
-18:8/0 = 0
-19:8/0 = 0
-20:8/0 = 0
-21:8/0 = 0
-22:8/0 = 0
-23:8/0 = 0
-24:8/0 = 0
-25:8/0 = 0
-26:8/0 = 0
-27:8/0 = 0
-28:8/0 = 0
-29:8/0 = 0
-30:8/0 = 0
-31:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-19:9/0 = 0
-20:9/0 = 0
-21:9/0 = 0
-22:9/0 = 0
-23:9/0 = 0
-24:9/0 = 0
-25:9/0 = 0
-26:9/0 = 0
-27:9/0 = 0
-28:9/0 = 0
-29:9/0 = 0
-30:9/0 = 0
-31:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-12:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-16:10/0 = 0
-17:10/0 = 0
-18:10/0 = 0
-19:10/0 = 0
-20:10/0 = 0
-21:10/0 = 0
-22:10/0 = 0
-23:10/0 = 0
-24:10/0 = 0
-25:10/0 = 0
-26:10/0 = 0
-27:10/0 = 0
-28:10/0 = 0
-29:10/0 = 0
-30:10/0 = 0
-31:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-10:11/0 = 0
-11:11/0 = 0
-12:11/0 = 0
-13:11/0 = 0
-14:11/0 = 0
-15:11/0 = 0
-16:11/0 = 0
-17:11/0 = 0
-18:11/0 = 0
-19:11/0 = 0
-20:11/0 = 0
-21:11/0 = 0
-22:11/0 = 0
-23:11/0 = 0
-24:11/0 = 0
-25:11/0 = 0
-26:11/0 = 0
-27:11/0 = 0
-28:11/0 = 0
-29:11/0 = 0
-30:11/0 = 0
-31:11/0 = 0
-7:12/0 = 0
-8:12/0 = 0
-9:12/0 = 0
-10:12/0 = 0
-11:12/0 = 0
-13:12/0 = 0
-15:12/0 = 0
-7:13/0 = 0
-8:13/0 = 0
-9:13/0 = 0
-10:13/0 = 0
-11:13/0 = 0
-13:13/0 = 0
-15:13/0 = 0
-1:14/0 = 0
-4:14/0 = 0
-5:14/0 = 0
-6:14/0 = 0
-7:14/0 = 0
-12:14/0 = 0
-13:14/0 = 0
-14:14/0 = 0
-15:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-9:15/0 = 0
-10:15/0 = 0
-11:15/0 = 0
-12:15/0 = 0
-13:15/0 = 0
-14:15/0 = 0
-15:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_pof1r"]
 terrain_set_0/mode = 0
@@ -463,16 +239,380 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_8n02c")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ecom"]
-size = Vector2(719, 355)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opca8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
+size = Vector2(430, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjgkr"]
+size = Vector2(97, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n02c"]
+size = Vector2(129, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6uwc"]
+size = Vector2(94, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u01fw"]
+size = Vector2(257, 28)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pjgkr"]
+vertices = PackedVector2Array(797.60156, 303.77344, 799.6094, 356.0703, 378, 358.9297, 378, 231.70313, 660.39844, 222.96094, 738.1406, 203.27344, 972.6797, 69.02344, 1101.7578, 70.85156, 1099.2266, 178, 1022.15625, 178, 851.28906, 127.49219, 914.28906, 90.078125, 1021.14844, 239.14844, 895.59375, 241.14844, 794.5469, 165.32031, 891.6094, 305.78906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 6, 9, 12, 13, 14), PackedInt32Array(14, 13, 15, 0, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(368, 369, 810, 366, 808, 314, 901, 316, 905, 251, 1031, 249, 1032, 188, 1109, 188, 1112, 61, 971, 59, 910, 81, 846, 119, 789, 157, 734, 194, 659, 213, 368, 222)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8n02c"]
-vertices = PackedVector2Array(1098.0703, -159.04688, 1099.9063, 71.921875, 399.15625, 67.0625, 402.84375, -162.9375)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(393, -173, 389, 77, 1110, 82, 1108, -169)])
+vertices = PackedVector2Array(608.21094, 6.0078125, 488.46094, 22.96875, 417.4297, 20.4375, 493.92188, -16.789063, 606.6328, -58.929688, 837.7422, -49.921875, 1098.1094, -154.25781, 1099.7578, 52.171875, 1015.46094, -57.921875, 852.1328, 2.0234375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(5, 6, 8, 9), PackedInt32Array(5, 9, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(490, -26, 377, 29, 489, 33, 609, 16, 854, 12, 1012, -46, 1110, 82, 1108, -169, 836, -60, 605, -69)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d5o4"]
-size = Vector2(700, 229)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ecom"]
+size = Vector2(68, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ha6qo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sau3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5yimb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nlyqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g8kvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gwpcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4u7t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w610s")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_itxgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vdr52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_py8wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3uf1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rlrbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wtmbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3mubk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u2ykh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xrlby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o6kej")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xj76q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7jhsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eb7wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2bqh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jdssa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jpq8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_07t1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1v82r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8y0cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nmfn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_chkh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ykdij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_oces5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_chkh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ka3q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ygw6r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_c0wri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7ec57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wsgh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ysahj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ya0os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qgch4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_fp87e")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_7phfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v0knh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_yimow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vlrbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_a3kct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_if2j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ced76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_fu3fd")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adgx6"]
+size = Vector2(52, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_111my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_ktydc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_wqdoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_giu8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_jpqaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_gcpua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_pm81x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ckawl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_7qtml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_p4uju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_475mv")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_rohba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fjnt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhepx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0uhxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_it64y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4pktj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rnra6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r813s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wx6jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1ub7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3hjqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f1deq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yetdy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wx6jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1ub7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yetdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ha6qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_f1deq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3hjqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_k6cyc")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("82_ucai7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_0he6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_f0hq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_ydjgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_nfdb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_ls4q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_q0uc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_ng0e7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_u2cr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_vcjed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_mroj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_y8h5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_a6l51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_unvpq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("spawn_point_1", "spawn_point_2")]
 script = ExtResource("1_8n02c")
@@ -491,6 +631,10 @@ debug_color = Color(0.8159611, 0.40706536, 0.012633745, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sol"]
 position = Vector2(1, 22)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAvABUAAAAFAAAAAAAxABUAAAAFAAAAAAAzABIAAAAFAAAAAAA1ABIAAAAFAAAAAAA3ABIAAAAFAAAAAAA5AA4AAAAFAAAAAAA7AA4AAAAFAAAAAAA9AA4AAAAFAAAAAAA/AA4AAAAFAAAAAABAAAoAAAAFAAAAAABCAAoAAAAFAAAAAABDAAoAAAAFAAAAAABEAAoAAAAFAAAAAAAWABgAAAAFAAAAAAAUABgAAAAFAAAAAAASABgAAAAFAAAAAAAQABgAAAAFAAAAAAAOABgAAAAFAAAAAAAMABgAAAAFAAAAAAAKABgAAAAFAAAAAAAIABgAAAAFAAAAAAA=")
+tile_set = SubResource("TileSet_pof1r")
 
 [node name="Plateform" type="StaticBody2D" parent="."]
 position = Vector2(407, 351)
@@ -528,22 +672,40 @@ position = Vector2(665, 308)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_pjgkr")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
-tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAvABUAAAAFAAAAAAAxABUAAAAFAAAAAAAzABIAAAAFAAAAAAA1ABIAAAAFAAAAAAA3ABIAAAAFAAAAAAA5AA4AAAAFAAAAAAA7AA4AAAAFAAAAAAA9AA4AAAAFAAAAAAA/AA4AAAAFAAAAAABAAAoAAAAFAAAAAABCAAoAAAAFAAAAAABDAAoAAAAFAAAAAABEAAoAAAAFAAAAAAAWABgAAAAFAAAAAAAUABgAAAAFAAAAAAASABgAAAAFAAAAAAAQABgAAAAFAAAAAAAOABgAAAAFAAAAAAAMABgAAAAFAAAAAAAKABgAAAAFAAAAAAAIABgAAAAFAAAAAAA=")
-tile_set = SubResource("TileSet_pof1r")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D"]
-position = Vector2(754.5, 258.5)
-shape = SubResource("RectangleShape2D_7ecom")
-debug_color = Color(0.20171374, 0.6412115, 0, 0.41960785)
-
 [node name="NavigationRegion2DAir" type="NavigationRegion2D" parent="."]
+position = Vector2(1, 38)
 navigation_polygon = SubResource("NavigationPolygon_8n02c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2DAir"]
-position = Vector2(747, -44.5)
-shape = SubResource("RectangleShape2D_5d5o4")
-debug_color = Color(0.89078736, 0.0002502799, 0.79371786, 0.41960785)
 
 [node name="Goal" type="Node2D" parent="."]
 position = Vector2(1066, -37)
+
+[node name="FlyingEnemy" type="CharacterBody2D" parent="."]
+position = Vector2(703, -8)
+script = ExtResource("3_k6cyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyingEnemy"]
+position = Vector2(-14, 20)
+shape = SubResource("RectangleShape2D_7ecom")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlyingEnemy"]
+sprite_frames = SubResource("SpriteFrames_ha6qo")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="FlyingEnemy"]
+
+[node name="GroundedEnemy" type="CharacterBody2D" parent="."]
+position = Vector2(704, 282)
+script = ExtResource("32_5yimb")
+SPEED = null
+JUMP_FORCE = null
+GRAVITY = null
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="GroundedEnemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundedEnemy"]
+position = Vector2(8, 16.5)
+shape = SubResource("RectangleShape2D_adgx6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GroundedEnemy"]
+position = Vector2(9, 17)
+sprite_frames = SubResource("SpriteFrames_111my")
+animation = &"death"

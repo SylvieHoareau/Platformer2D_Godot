@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://cpeunbin5w6j2"]
+[gd_scene load_steps=114 format=4 uid="uid://cpeunbin5w6j2"]
 
 [ext_resource type="Script" uid="uid://cbkwtdrifhpmf" path="res://scripts/world.gd" id="1_8n02c"]
 [ext_resource type="Texture2D" uid="uid://dgvdwwc4j7f6y" path="res://assets/tileset/tileset.png" id="2_pjgkr"]
@@ -101,165 +101,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7xio"]
 size = Vector2(389, 11)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n02c"]
-texture = ExtResource("2_pjgkr")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-14:3/0 = 0
-15:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_pof1r"]
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_8n02c")
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opca8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0icee"]
-size = Vector2(430, 25)
+size = Vector2(417, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjgkr"]
-size = Vector2(97, 31)
+size = Vector2(97, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n02c"]
-size = Vector2(129, 30)
+size = Vector2(162, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6uwc"]
-size = Vector2(94, 32)
+size = Vector2(130, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u01fw"]
-size = Vector2(257, 28)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_pjgkr"]
-vertices = PackedVector2Array(797.60156, 303.77344, 799.6094, 356.0703, 378, 358.9297, 378, 231.70313, 660.39844, 222.96094, 738.1406, 203.27344, 972.6797, 69.02344, 1101.7578, 70.85156, 1099.2266, 178, 1022.15625, 178, 851.28906, 127.49219, 914.28906, 90.078125, 1021.14844, 239.14844, 895.59375, 241.14844, 794.5469, 165.32031, 891.6094, 305.78906)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 6, 9, 12, 13, 14), PackedInt32Array(14, 13, 15, 0, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(368, 369, 810, 366, 808, 314, 901, 316, 905, 251, 1031, 249, 1032, 188, 1109, 188, 1112, 61, 971, 59, 910, 81, 846, 119, 789, 157, 734, 194, 659, 213, 368, 222)])
+size = Vector2(263, 30)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8n02c"]
 vertices = PackedVector2Array(608.21094, 6.0078125, 488.46094, 22.96875, 417.4297, 20.4375, 493.92188, -16.789063, 606.6328, -58.929688, 837.7422, -49.921875, 1098.1094, -154.25781, 1099.7578, 52.171875, 1015.46094, -57.921875, 852.1328, 2.0234375)
@@ -445,6 +302,289 @@ animations = [{
 "name": &"run",
 "speed": 5.0
 }]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pjgkr"]
+vertices = PackedVector2Array(378, 231.70313, 660.39844, 222.96094, 797.60156, 303.77344, 799.6094, 356.0625, 391.21875, 358.84375, 378, 358.9297, 972.6797, 69.02344, 1101.7578, 70.85156, 1099.2266, 178, 1022.15625, 178, 738.1406, 203.27344, 851.28906, 127.49219, 914.28906, 90.078125, 1021.14844, 239.14844, 895.59375, 241.14844, 794.5469, 165.32031, 891.6094, 305.78906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(2, 1, 10), PackedInt32Array(11, 12, 6, 9, 13, 14, 15), PackedInt32Array(15, 14, 16, 2, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(368, 369, 391.29266, 368.8419, 810, 366, 808, 314, 901, 316, 905, 251, 1031, 249, 1032, 188, 1109, 188, 1112, 61, 971, 59, 910, 81, 846, 119, 789, 157, 734, 194, 659, 213, 368, 222)])
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itxgy"]
+texture = ExtResource("2_pjgkr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_itxgy"]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_itxgy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n02c"]
+texture = ExtResource("2_pjgkr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pof1r"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_8n02c")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adgx6"]
 size = Vector2(52, 59)
@@ -632,34 +772,30 @@ debug_color = Color(0.8159611, 0.40706536, 0.012633745, 0.41960785)
 [node name="Sprite2D" type="Sprite2D" parent="Sol"]
 position = Vector2(1, 22)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAvABUAAAAFAAAAAAAxABUAAAAFAAAAAAAzABIAAAAFAAAAAAA1ABIAAAAFAAAAAAA3ABIAAAAFAAAAAAA5AA4AAAAFAAAAAAA7AA4AAAAFAAAAAAA9AA4AAAAFAAAAAAA/AA4AAAAFAAAAAABAAAoAAAAFAAAAAABCAAoAAAAFAAAAAABDAAoAAAAFAAAAAABEAAoAAAAFAAAAAAAWABgAAAAFAAAAAAAUABgAAAAFAAAAAAASABgAAAAFAAAAAAAQABgAAAAFAAAAAAAOABgAAAAFAAAAAAAMABgAAAAFAAAAAAAKABgAAAAFAAAAAAAIABgAAAAFAAAAAAA=")
-tile_set = SubResource("TileSet_pof1r")
-
 [node name="Plateform" type="StaticBody2D" parent="."]
 position = Vector2(407, 351)
 physics_material_override = SubResource("PhysicsMaterial_opca8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plateform"]
-position = Vector2(185, -5.210449)
+position = Vector2(183.5, -13.5)
 shape = SubResource("RectangleShape2D_0icee")
 debug_color = Color(0.9943972, 0, 0.2300325, 0.41960785)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Plateform"]
-position = Vector2(449, -55)
+position = Vector2(440.5, -46)
 shape = SubResource("RectangleShape2D_pjgkr")
 debug_color = Color(0.9926774, 0, 0.25512865, 0.41960785)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Plateform"]
-position = Vector2(560.5, -118)
+position = Vector2(569, -114)
 shape = SubResource("RectangleShape2D_8n02c")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Plateform"]
-position = Vector2(657, -183)
+position = Vector2(712, -175)
 shape = SubResource("RectangleShape2D_u6uwc")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Plateform"]
-position = Vector2(-159.5, 42)
+position = Vector2(-156.5, 51)
 shape = SubResource("RectangleShape2D_u01fw")
 
 [node name="SpawnPoint1" type="Marker2D" parent="."]
@@ -669,15 +805,9 @@ position = Vector2(464, 306)
 [node name="SpawnPoint2" type="Marker2D" parent="."]
 position = Vector2(665, 308)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_pjgkr")
-
 [node name="NavigationRegion2DAir" type="NavigationRegion2D" parent="."]
 position = Vector2(1, 38)
 navigation_polygon = SubResource("NavigationPolygon_8n02c")
-
-[node name="Goal" type="Node2D" parent="."]
-position = Vector2(1066, -37)
 
 [node name="FlyingEnemy" type="CharacterBody2D" parent="."]
 position = Vector2(703, -8)
@@ -692,12 +822,28 @@ sprite_frames = SubResource("SpriteFrames_ha6qo")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="FlyingEnemy"]
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_pjgkr")
+
+[node name="TileMap" type="TileMap" parent="NavigationRegion2D"]
+tile_set = SubResource("TileSet_itxgy")
+navigation_visibility_mode = 1
+format = 2
+layer_0/tile_data = PackedInt32Array(786436, 327680, 0, 786437, 327680, 0, 786438, 327680, 0, 786439, 327680, 0, 786440, 327680, 0, 786441, 327680, 0, 786442, 327680, 0, 786443, 327680, 0, 655372, 327680, 0, 655373, 327680, 0, 655374, 327680, 0, 655375, 327680, 0, 655376, 327680, 0, 655377, 327680, 0, 655378, 327680, 0, 655379, 327680, 0, 655380, 327680, 0, 655381, 327680, 0, 655382, 327680, 0, 655383, 327680, 0, 655384, 327680, 0, 589849, 327680, 0, 589850, 327680, 0, 589851, 327680, 0, 589852, 327680, 0, 458780, 327680, 0, 458781, 327680, 0, 458782, 327680, 0, 458783, 327680, 0, 458784, 327680, 0, 327713, 327680, 0, 327714, 327680, 0, 327715, 327680, 0, 327716, 327680, 0)
+
+[node name="Ground" type="TileMapLayer" parent="NavigationRegion2D/TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAwABUAAAAFAAAAAAAyABUAAAAFAAAAAAAWABgAAAAFAAAAAAAUABgAAAAFAAAAAAASABgAAAAFAAAAAAAzABIAAAAFAAAAAAA1ABIAAAAFAAAAAAA3ABIAAAAFAAAAAAA5AA4AAAAFAAAAAAA7AA4AAAAFAAAAAAA9AA4AAAAFAAAAAAA/AA4AAAAFAAAAAABAAAoAAAAFAAAAAABCAAoAAAAFAAAAAABEAAoAAAAFAAAAAAAQABgAAAAFAAAAAAAOABgAAAAFAAAAAAAMABgAAAAFAAAAAAAKABgAAAAFAAAAAAAIABgAAAAFAAAAAAA=")
+tile_set = SubResource("TileSet_itxgy")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
+visible = false
+tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAAAAAAeABUAAAAFAAAAAAAgABUAAAAFAAAAAAAiABUAAAAFAAAAAAAkABUAAAAFAAAAAAAmABUAAAAFAAAAAAAoABUAAAAFAAAAAAAqABUAAAAFAAAAAAAsABUAAAAFAAAAAAAuABUAAAAFAAAAAAAvABUAAAAFAAAAAAAxABUAAAAFAAAAAAAzABIAAAAFAAAAAAA1ABIAAAAFAAAAAAA3ABIAAAAFAAAAAAA5AA4AAAAFAAAAAAA7AA4AAAAFAAAAAAA9AA4AAAAFAAAAAAA/AA4AAAAFAAAAAABAAAoAAAAFAAAAAABCAAoAAAAFAAAAAABDAAoAAAAFAAAAAABEAAoAAAAFAAAAAAAWABgAAAAFAAAAAAAUABgAAAAFAAAAAAASABgAAAAFAAAAAAAQABgAAAAFAAAAAAAOABgAAAAFAAAAAAAMABgAAAAFAAAAAAAKABgAAAAFAAAAAAAIABgAAAAFAAAAAAA=")
+tile_set = SubResource("TileSet_pof1r")
+
 [node name="GroundedEnemy" type="CharacterBody2D" parent="."]
-position = Vector2(704, 282)
+position = Vector2(703, 275)
 script = ExtResource("32_5yimb")
-SPEED = null
-JUMP_FORCE = null
-GRAVITY = null
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="GroundedEnemy"]
 

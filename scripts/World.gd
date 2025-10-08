@@ -47,14 +47,14 @@ func _ready() -> void:
 	
 	# Spawn du Grounded Enemy
 	# Le Grounded Enemy aura besoin de l'AStar Grid
-	if spawn_point_3 != null:
+	if spawn_point_1 != null:
 		spawn_entity(GROUNDED_ENEMY_SCENE, spawn_point_1.position)
 	
 	# Spawn du Flying Enemy
 	# Le Flying Enemy n'aura pas besoin de l'Astar Grid
-	if spawn_point_4 != null:
+	if spawn_point_2 != null:
 		# Décaler légèrement la position
-		var flying_spawn_pos = spawn_point_4.position + Vector2(0, -100)
+		var flying_spawn_pos = spawn_point_2.position + Vector2(0, -100)
 		spawn_entity(FLYING_ENEMY_SCENE, flying_spawn_pos)
 
 func _unhandled_input(event: InputEvent) -> void:

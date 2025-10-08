@@ -119,9 +119,9 @@ size = Vector2(96, 30)
 size = Vector2(258, 35)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8n02c"]
-vertices = PackedVector2Array(608.21094, 6.0078125, 488.46094, 22.96875, 417.4297, 20.4375, 493.92188, -16.789063, 606.6328, -58.929688, 837.7422, -49.921875, 1098.1094, -154.25781, 1099.7578, 52.171875, 1015.46094, -57.921875, 852.1328, 2.0234375)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(5, 6, 8, 9), PackedInt32Array(5, 9, 0)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(490, -26, 377, 29, 489, 33, 609, 16, 854, 12, 1012, -46, 1110, 82, 1108, -169, 836, -60, 605, -69)])
+vertices = PackedVector2Array(1098.1094, -154.25781, 1099.7578, 52.171875, 1015.03125, -58.5, 837.85156, -49.96875, 857.5625, 16.078125, 166.46094, 42.71875, 87.328125, -27, 238.6875, -33.023438, 361.5703, 29.007813, 611.84375, 25, 472.3828, -55.992188)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 8, 7, 10, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(238, -43, 62, -36, 163, 53, 362, 39, 612, 35, 860, 26, 1012, -46, 1110, 82, 1108, -169, 836, -60, 472, -66)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n02c"]
 texture = ExtResource("2_pjgkr")
@@ -805,8 +805,14 @@ position = Vector2(464, 306)
 [node name="SpawnPoint2" type="Marker2D" parent="."]
 position = Vector2(665, 308)
 
+[node name="SpawnPoint3" type="Marker2D" parent="."]
+position = Vector2(658, 12)
+
+[node name="SpawnPoint4" type="Marker2D" parent="."]
+position = Vector2(719, 299)
+
 [node name="NavigationRegion2DAir" type="NavigationRegion2D" parent="."]
-position = Vector2(1, 38)
+position = Vector2(-39, 38)
 navigation_polygon = SubResource("NavigationPolygon_8n02c")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -814,6 +820,7 @@ tile_map_data = PackedByteArray("AAAYABUAAAAFAAAAAAAaABUAAAAFAAAAAAAcABUAAAAFAAA
 tile_set = SubResource("TileSet_pof1r")
 
 [node name="FlyingEnemy" type="CharacterBody2D" parent="."]
+visible = false
 position = Vector2(703, -8)
 script = ExtResource("3_k6cyc")
 
@@ -827,6 +834,7 @@ sprite_frames = SubResource("SpriteFrames_ha6qo")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="FlyingEnemy"]
 
 [node name="GroundedEnemy" type="CharacterBody2D" parent="."]
+visible = false
 position = Vector2(705, 283)
 script = ExtResource("32_5yimb")
 

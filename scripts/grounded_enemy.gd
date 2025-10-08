@@ -16,9 +16,9 @@ var path_index: int = 0
 var grid_origin = Vector2i(0, 0)
 #var WAYPOINTS: Array[Vector2] = []
 
-@onready var tilemap: TileMap = $"TileMap"
+#var tilemap_node: TileMap
+@onready var tilemap_layer: TileMapLayer = $"TileMapLayer"
 #@onready var astar_grid: AStarGrid2D = get_node("/root/World").get("astar_grid")
-
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # Référence au noeud Navigation Agent 2D
@@ -28,7 +28,11 @@ func _ready() -> void:
 	# Attendre de charger les frames
 	await get_tree().physics_frame
 	
-	if tilemap == null:
+	#var parent_node = get_parent()
+	#if parent_node:
+		#tilemap_node = parent_node.get_node("TileMapLayer")
+	
+	if tilemap_layer == null:
 		push_error("TileMap introuvable. Vérifie le chemin")
 		return
 	
@@ -50,7 +54,7 @@ func _ready() -> void:
 	path = astar_grid.get_point_path(start_cell, end_cell)
 	path_index = 0
 
-# LOGIQUE DE MOUVEMENT
+# LOGIQUE DE MOUVEMENT AUTONOME
 func physics_process(delta: float) -> void:
 	# Appliquer la gravité
 	if not is_on_floor():
@@ -82,7 +86,7 @@ func physics_process(delta: float) -> void:
 	# DÉCISION DE SAUT 
 	if is_on_floor():
 		# Taille d'une tuile pour la référence
-		var tile_size = tilemap.tile_set.tile_size.y
+		var tile_size = tilemap_layer.tile_set.tile_size.y
 		var next_point_dist_x = abs(target.x - global_position.x)
 	
 		# Condition 1 : Sauter si la cible est significativement plus haute (si y est plus petit)
@@ -121,28 +125,31 @@ func physics_process(delta: float) -> void:
 
 # FONCTIONS DE DEPENDANCE ET DE CONVERSION
 
+# Injection de dépendance AStar
 func set_astar_dependencies(astar: AStarGrid2D, origin: Vector2i) -> void:
 	astar_grid = astar
 	grid_origin = origin
 	
-func get_astar_grid() -> AStarGrid2D:
-	return astar_grid
+#func get_astar_grid() -> AStarGrid2D:
+	#return astar_grid
 
 # Convertit une position du monde (Vector2) en coordonnées Astar (Vector2i)
 func world_to_grid(pos: Vector2) -> Vector2i:
 	# Convertir World -> TileMap (absolu)
-	return tilemap.local_to_map(tilemap.to_local(pos))
+	return tilemap_layer.local_to_map(tilemap_layer.to_local(pos))
 
 # Convertit une coordonnées AStar (Vector2i) en position du monde (Vector2)
 func grid_to_world(cell: Vector2i) -> Vector2:
 	# Converir AStar (relative) -> TileMap
 	var tilemap_cell = cell + grid_origin
-	return tilemap.to_global(tilemap.map_to_local(cell))
+	return tilemap_layer.to_global(tilemap_layer.map_to_local(cell))
 
+# Fonction de recalcul du chemin
 func calculate_path(from_world: Vector2, to_world: Vector2) -> void:
 	var from_cell := world_to_grid(from_world)
 	var to_cell := world_to_grid(to_world)
-	path = astar_grid.get_point_path(from_cell, to_cell)
-	path_index = 0
+	if astar_grid:
+		path = astar_grid.get_point_path(from_cell, to_cell)
+		path_index = 0
 
 	

@@ -7,11 +7,15 @@ const PLAYER_SCENE = preload("res://scenes/Player.tscn")
 # Charger les scripts des ennemis
 const GROUNDED_ENEMY_SCENE = preload("res://scenes/GroundedEnemy.tscn")
 const FLYING_ENEMY_SCENE = preload("res://scenes/FlyingEnemy.tscn")
+# Charger le script PlatformerAStar.gd
+const PLATFORMER_ASTAR = preload("res://scripts/plaformer_astar.gd")
 
 # Hauteur maximale de saut
 const MAX_JUMP_HEIGHT = 4
 # Distance horizontale maximale de saut
 const MAX_JUMP_DISTANCE = 4
+# Coup supplémentaire pour favoriser la marche simple
+const JUMP_EXTRA_WEIGHT = 5.0
 
 # Variables pour suivre quels joueurs ont été spawnés
 var player1_spawned = false
@@ -20,8 +24,12 @@ var player2_spawned = false
 # Points de spawn (voir éditeur)
 @export var spawn_point_1: Marker2D
 @export var spawn_point_2: Marker2D
+@export var spawn_point_3: Marker2D
+@export var spawn_point_4: Marker2D
 
-var astar_grid = AStarGrid2D.new()
+# Variables AStar
+var astar_grid = PLATFORMER_ASTAR.new()
+#var astar_grid = AStar2D.new()
 var path: PackedVector2Array = []
 var path_index: int = 0
 var grid_origin = Vector2i(0, 0)
@@ -39,14 +47,14 @@ func _ready() -> void:
 	
 	# Spawn du Grounded Enemy
 	# Le Grounded Enemy aura besoin de l'AStar Grid
-	if spawn_point_1 != null:
+	if spawn_point_3 != null:
 		spawn_entity(GROUNDED_ENEMY_SCENE, spawn_point_1.position)
 	
 	# Spawn du Flying Enemy
 	# Le Flying Enemy n'aura pas besoin de l'Astar Grid
-	if spawn_point_2 != null:
+	if spawn_point_4 != null:
 		# Décaler légèrement la position
-		var flying_spawn_pos = spawn_point_2.position + Vector2(0, -100)
+		var flying_spawn_pos = spawn_point_4.position + Vector2(0, -100)
 		spawn_entity(FLYING_ENEMY_SCENE, flying_spawn_pos)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -105,6 +113,7 @@ func spawn_entity(scene: PackedScene, position: Vector2, id: int = 0) -> void:
 func config_astar_grid() -> void:
 	var used_rect = tilemap_layer.get_used_rect()
 	
+	# INITIALISATION DE LA GRILLE
 	# Récupère le point de départ réel de la TileMap
 	grid_origin = used_rect.position
 	# Définir la région de la grille AStar
@@ -114,7 +123,7 @@ func config_astar_grid() -> void:
 	# Mettre à jour la grille pour appliquer les paramètres
 	astar_grid.update()
 	
-	# Marquer les obstacles (sols)
+	# MARQUER LES OBSTACLES (sols)
 	for x in range(used_rect.position.x, used_rect.end.x):
 		for y in range(used_rect.position.y, used_rect.end.y):
 			var cell = Vector2i(x, y)
@@ -132,8 +141,8 @@ func config_astar_grid() -> void:
 			# Vérifier si la cellule a une tuile dessinée
 			#if tilemap_layer.get_cell_source_id(cell) != -1:
 				#astar_grid.set_point_solid(cell, true)
-	# Créer les connexions de saut
-	for x in range(used_rect.position.y, used_rect.end.x):
+	# CREATIONS DES CONNEXIONS DE MOUVEMENT (MARCHE, SAUT, CHUTE)
+	for x in range(used_rect.position.x, used_rect.end.x):
 		for y in range(used_rect.position.y, used_rect.end.y):
 			var current_cell = Vector2i(x, y)
 			var astar_current_cell = current_cell - grid_origin
@@ -155,18 +164,18 @@ func config_astar_grid() -> void:
 				var walk_end_cell = current_cell + Vector2i(dx, 0)
 				var astar_walk_end_cell = walk_end_cell - grid_origin
 				
+				# Vérifier si la cible est valide (non solide et a un sol)
+				var walk_end_ground_cell = walk_end_cell + Vector2i(0,1)
+				var astar_walk_end_ground_cell = walk_end_ground_cell - grid_origin
+				
 				# Vérifier si le point cible est valide
 				if astar_grid.is_in_bounds(astar_walk_end_cell.x, astar_walk_end_cell.y) and \
-					not astar_grid.is_point_solid(astar_walk_end_cell):
-						
-						# Vérifier qu'il y a un sol sous le point
-						var walk_end_ground_cell = walk_end_cell + Vector2i(0,1)
-						var astar_walk_end_ground_cell = walk_end_ground_cell - grid_origin
-						
-						if astar_grid.is_in_bounds(astar_walk_end_ground_cell.x, astar_walk_end_ground_cell.y) and \
-					   		astar_grid.is_point_solid(astar_walk_end_ground_cell):
+					not astar_grid.is_point_solid(astar_walk_end_cell) and \
+					astar_grid.is_in_bounds(astar_walk_end_ground_cell.x, astar_walk_end_ground_cell.y) and \
+					astar_grid.is_point_solid(astar_walk_end_ground_cell):
 							# Connexion de marche (poids 1.0 par défaut)
-							astar_grid.connect_points(astar_current_cell, astar_walk_end_cell, true)
+							pass # AStarGrid2D gérer la connexion adjacente avec un coût de 1
+			
 			# SAUT : Connexions sur la portée de saut
 			for dx in range(-MAX_JUMP_DISTANCE, MAX_JUMP_DISTANCE + 1):
 				if dx == 0: continue
@@ -188,85 +197,24 @@ func config_astar_grid() -> void:
 					var astar_end_ground_cell = end_ground_cell - grid_origin
 					
 					if astar_grid.is_in_bounds(astar_end_ground_cell.x, astar_end_ground_cell.y) and \
-					   astar_grid.is_point_solid(astar_end_ground_cell): # CORRECTION: Utiliser astar_end_ground_cell
+					   astar_grid.is_point_solid(astar_end_ground_cell):
+						# Connexion de saut/chute (poids plus élevé)
+						#astar_grid.set_point_connection_weight(astar_current_cell, astar_end_cell, JUMP_EXTRA_WEIGHT)
+						pass # Pas de connexion
 						
-							# Connexion de saut/chute (poids plus élevé)
-							astar_grid.connect_points(astar_current_cell, astar_end_cell, true, JUMP_EXTRA_WEIGHT)
-						
-	print("Configuration AStarGrid2D terminée. Région:", astar_grid.region)
+			print("Configuration AStarGrid2D terminée. Région:", astar_grid.region)
+				
+			# Coordonnées de grille
+			print("Coordonnées de grille :", astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # Prints [(0, 0), (1, 1), (2, 2), (3, 3), (3, 4)]
+			# Coordonnées du monde
+			print("Coordonnées du monde :", astar_grid.get_point_path(Vector2i(0, 0), Vector2i(3, 4))) # Prints [(0, 0), (16, 16), (32, 32), (48, 48), (48, 64)]
+			# Définir les paramétres spécifiques pour marquer les points
+			astar_grid.set_point_solid(Vector2i(44, 20), false)
+			astar_grid.set_point_weight_scale(Vector2i(53, 17), 2.5) # Coût le plus élevé
+			astar_grid.set_point_weight_scale(Vector2i(60, 1), 2.5)
+			astar_grid.set_point_weight_scale(Vector2i(66, 10), 2.5)
 	
-	# ---- Fin des modifications ----
-	
-					
-	# Coût supplémentaire pour un saut
-	const JUMP_EXTRA_WEIGHT = 5.0
-	for x in range(used_rect.position.x, used_rect.end.x):
-		for y in range(used_rect.position.y, used_rect.end.y):
-			var current_cell = Vector2i(x, y)
-			
-			# Conversion du point de la TileMpa au point de l'AstarGrid
-			var astar_current_cell = current_cell - grid_origin
-			
-			# Ajout de connexion uniquement depuis un point de départ solide
-			if astar_grid.is_point_solid(astar_current_cell):
-				continue
-				
-			# On cherche la tuile sous la position actuelle
-			var ground_cell = current_cell + Vector2i(0,1)
-			
-			# Conversion du point du sol au point de l'AStarGrid
-			var astar_ground_cell = ground_cell - grid_origin
-			
-			# Vérifier si la tuile en dessous est un solide
-			if not astar_grid.is_in_bounds(astar_ground_cell.x, astar_ground_cell.y) or not astar_grid.is_point_solid(astar_ground_cell):
-				continue
-				
-			# La cellule de départ est le haut de la plateforme
-			# C'est là que l'ennemi se tient
-			var astar_start_cell = current_cell
-			
-			# On parcourt les cellules devant (à gauche et à droite)
-			for dx in range(-MAX_JUMP_DISTANCE, MAX_JUMP_DISTANCE + 1):
-				if dx == 0:
-					continue
-					
-				# On parcourt les cellules en hauteur (vers le haut)
-				for dy in range(-MAX_JUMP_HEIGHT, 2):
-					if dx == 0 and dy == 0:
-						continue
-					var end_cell = Vector2i(x + dx, y + dy)
-				
-					# Conversion du point de fin au 
-					var astar_end_cell = end_cell - grid_origin
-					
-					# Vérifie si la cellule cible est dans la grille
-					if not astar_grid.is_in_bounds(astar_end_cell.x, astar_end_cell.y):
-						continue
-					
-					# Vérifie si la cellule cible n'est pas un obstacle
-					if astar_grid.is_point_solid(astar_end_cell):
-						continue
-					
-					# Vérifie s'il y a un sol sous la cellule cible
-					var end_ground_cell = end_cell + Vector2i(0, 1)
-				
-					var astar_end_ground_cell = end_ground_cell - grid_origin
-					
-					if astar_grid.is_in_bounds(astar_end_ground_cell.x, astar_end_ground_cell.y) and astar_grid.is_point_solid(end_ground_cell):
-						# Si on arrive ici, c'est un point d'atterrissage valide
-						astar_grid.connect_points(astar_start_cell, astar_end_cell, true, JUMP_EXTRA_WEIGHT)
-				
-		# Coordonnées de grille
-		print("Coordonnées de grille :", astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # Prints [(0, 0), (1, 1), (2, 2), (3, 3), (3, 4)]
-		# Coordonnées du monde
-		print("Coordonnées du monde :", astar_grid.get_point_path(Vector2i(0, 0), Vector2i(3, 4))) # Prints [(0, 0), (16, 16), (32, 32), (48, 48), (48, 64)]
-		# Définir les paramétres spécifiques pour marquer les points
-		astar_grid.set_point_solid(Vector2i(44, 20), false)
-		astar_grid.set_point_weight_scale(Vector2i(53, 17), 2.5) # Coût le plus élevé
-		astar_grid.set_point_weight_scale(Vector2i(53, 17), 2.5)
-		astar_grid.set_point_weight_scale(Vector2i(60, 14), 2.5)
-	
-		print("Configuration AStarGrid2D terminée. Région:", astar_grid.region)
+			print("Configuration AStarGrid2D terminée. Région:", astar_grid.region)
 
 func get_astar_grid() -> AStarGrid2D:
 	return astar_grid
